@@ -1,0 +1,8 @@
+{
+  "name": "JET SAMBA BLACK • Site Oficial & Gestão",
+  "description": "Site oficial da banda JET SAMBA BLACK com agenda de shows, integrantes, história, galeria de fotos e vídeos do YouTube, streaming, área de contratações com notificações por e-mail e portais exclusivos para Administrador, Contratante e Fãs.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

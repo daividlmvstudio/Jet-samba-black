@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-rtl {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-left 14s linear infinite;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-slow {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-left 22s linear infinite;
+}
+
+.animate-marquee-fast {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-left 9s linear infinite;
+}
+
+@keyframes marquee-single-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-single-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-single-rtl 10s linear infinite;
+}
+
+.animate-single-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for clean UI */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
