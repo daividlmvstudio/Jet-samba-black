@@ -19,7 +19,8 @@ import {
   Radio,
   BookOpen,
   ExternalLink,
-  Disc3
+  Disc3,
+  Instagram
 } from 'lucide-react';
 import { SOUNDCLOUD_TRACK_URL } from './SoundCloudLadyPlayer';
 import { MarqueeText } from './MarqueeText';
@@ -82,9 +83,22 @@ export const Navbar: React.FC = () => {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="text-sm sm:text-base lg:text-lg font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-100 to-amber-200 whitespace-nowrap leading-tight">
-                {bandInfo.name}
-              </span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="text-sm sm:text-base lg:text-lg font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-100 to-amber-200 whitespace-nowrap leading-tight">
+                  {bandInfo.name}
+                </span>
+                <a
+                  id="navbar-instagram-btn"
+                  href={bandInfo.socialLinks?.instagram || 'https://instagram.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  title="Instagram Oficial JET SAMBA BLACK"
+                  className="p-1 sm:p-1.5 rounded-lg bg-gradient-to-tr from-amber-500/20 via-rose-500/25 to-purple-600/25 hover:from-amber-500/40 hover:via-rose-500/50 hover:to-purple-600/50 text-pink-400 hover:text-pink-200 border border-pink-500/30 hover:border-pink-400/60 shadow-sm transition-all duration-200 hover:scale-110 shrink-0"
+                >
+                  <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-400" />
+                </a>
+              </div>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                 <span className="text-[9px] sm:text-[10px] tracking-widest text-zinc-400 uppercase font-semibold whitespace-nowrap leading-none">
