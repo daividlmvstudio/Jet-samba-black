@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "BandData": {
+      "fields": {
+        "bandInfo": { "type": "map", "description": "Band details, logo, tagline, bio, contact and social links" },
+        "tracks": { "type": "array", "description": "Main tracklist and demos" },
+        "radioSettings": { "type": "map", "description": "Radio JET configuration and live settings" },
+        "radioTracks": { "type": "array", "description": "Radio JET track queue and singles" },
+        "members": { "type": "array", "description": "Band members" },
+        "shows": { "type": "array", "description": "Tour dates and shows" },
+        "photos": { "type": "array", "description": "Band gallery photos" },
+        "videos": { "type": "array", "description": "YouTube and promo videos" },
+        "bookings": { "type": "array", "description": "Show booking requests" },
+        "fanContent": { "type": "array", "description": "Exclusive fan club posts and media" },
+        "fanMessages": { "type": "array", "description": "Fan club guestbook messages and replies" },
+        "setlistVotes": { "type": "array", "description": "Setlist voting tally" },
+        "emails": { "type": "array", "description": "Inbox notifications and emails" },
+        "siteVisits": { "type": "number", "description": "Total site visits counter" },
+        "updatedAt": { "type": "string", "description": "Last updated timestamp ISO" }
+      }
+    }
+  }
+}

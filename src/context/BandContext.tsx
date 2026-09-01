@@ -357,23 +357,23 @@ export const BandProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
+  // Sync to localStorage safely (handling quota exceptions for audio dataUrls)
   useEffect(() => {
     try {
       localStorage.setItem('jetsamba_site_visits', siteVisits.toString());
     } catch {}
   }, [siteVisits]);
 
-  // Sync to localStorage safely (handling quota exceptions for audio dataUrls)
   useEffect(() => { localStorage.setItem('jetsamba_band_info', JSON.stringify(bandInfo)); }, [bandInfo]);
   useEffect(() => { localStorage.setItem('jetsamba_band_members', JSON.stringify(members)); }, [members]);
   useEffect(() => { localStorage.setItem('jetsamba_band_shows', JSON.stringify(shows)); }, [shows]);
   useEffect(() => { localStorage.setItem('jetsamba_band_photos', JSON.stringify(photos)); }, [photos]);
   useEffect(() => { localStorage.setItem('jetsamba_band_videos', JSON.stringify(videos)); }, [videos]);
+
   useEffect(() => {
     try {
       localStorage.setItem('jetsamba_band_radio_settings', JSON.stringify(radioSettings));
     } catch {
-      // If quota exceeded due to dataUrl, store settings with audioUrl reference
       try {
         const lightSettings = {
           ...radioSettings,
@@ -390,7 +390,6 @@ export const BandProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       localStorage.setItem('jetsamba_band_radio_tracks', JSON.stringify(radioTracks));
     } catch {
-      // If quota exceeded, store tracks without dataUrl payloads (IndexedDB stores full dataUrls)
       try {
         const lightTracks = radioTracks.map(t => ({
           ...t,
@@ -491,6 +490,7 @@ export const BandProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => { localStorage.setItem('jetsamba_band_fan_messages', JSON.stringify(fanMessages)); }, [fanMessages]);
   useEffect(() => { localStorage.setItem('jetsamba_band_setlist_votes', JSON.stringify(setlistVotes)); }, [setlistVotes]);
   useEffect(() => { localStorage.setItem('jetsamba_band_emails', JSON.stringify(emails)); }, [emails]);
+
   useEffect(() => { localStorage.setItem('jetsamba_band_current_user', JSON.stringify(currentUser)); }, [currentUser]);
 
   const addToast = (toast: Omit<ToastInfo, 'id'>) => {
